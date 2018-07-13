@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>all demo</title>
+</head>
+<body>
+<a href="./promise/index.html">promise demo</a>
+<a href="./ajax/index.html">ajax demo</a>
+</body>
+<script>
+//    alert(navigator.userAgent);
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var reg_rewrite = new RegExp("(^|/)" + name + "/([^/]*)(/|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        var q = window.location.pathname.substr(1).match(reg_rewrite);
+        if(r != null){
+            return unescape(r[2]);
+        }else if(q != null){
+            return unescape(q[2]);
+        }else{
+            return null;
+        }
+    }
+</script>
+</html>
